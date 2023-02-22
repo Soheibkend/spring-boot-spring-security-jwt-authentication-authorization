@@ -14,13 +14,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
+
 @Data
 @Builder
 public class UserDetailsImpl implements UserDetails {
 
 
     private User user;
+
+    public UserDetailsImpl (User user) {
+        this.user = user;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
